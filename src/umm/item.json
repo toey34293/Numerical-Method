@@ -1,0 +1,66 @@
+{
+    "results": [
+        {
+            "gender": "female",
+            "name": {
+                "title": "Mrs",
+                "first": "Liva",
+                "last": "Rasmussen"
+            },
+            "location": {
+                "street": {
+                    "number": 4062,
+                    "name": "Færgevej"
+                },
+                "city": "Gørløse",
+                "state": "Sjælland",
+                "country": "Denmark",
+                "postcode": 39444,
+                "coordinates": {
+                    "latitude": "-33.6920",
+                    "longitude": "117.3469"
+                },
+                "timezone": {
+                    "offset": "+5:00",
+                    "description": "Ekaterinburg, Islamabad, Karachi, Tashkent"
+                }
+            },
+            "email": "liva.rasmussen@example.com",
+            "login": {
+                "uuid": "8e8a634b-5faa-4cbb-bd72-08cd923a2df3",
+                "username": "blackbear595",
+                "password": "jackoff",
+                "salt": "0OQXQUl2",
+                "md5": "298b023558c2c6103432801ad8043f21",
+                "sha1": "0d01de650b050b81324ee787e6ddfa723d186440",
+                "sha256": "500a3e106ee85bfce912a8332ad989155975b2ca48194968dfe79f609c25dc49"
+            },
+            "dob": {
+                "date": "1986-12-16T10:11:53.173Z",
+                "age": 35
+            },
+            "registered": {
+                "date": "2016-07-27T15:23:39.806Z",
+                "age": 5
+            },
+            "phone": "11618919",
+            "cell": "27725247",
+            "id": {
+                "name": "CPR",
+                "value": "161286-5821"
+            },
+            "picture": {
+                "large": "https://randomuser.me/api/portraits/women/57.jpg",
+                "medium": "https://randomuser.me/api/portraits/med/women/57.jpg",
+                "thumbnail": "https://randomuser.me/api/portraits/thumb/women/57.jpg"
+            },
+            "nat": "DK"
+        }
+    ],
+    "info": {
+        "seed": "a49b9a103fd4edd6",
+        "results": 1,
+        "page": 1,
+        "version": "1.3"
+    }
+}

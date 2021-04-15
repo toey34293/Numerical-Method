@@ -40,22 +40,23 @@ export default class Test extends Component {
   //API
   async Ex() {
     // const url = "https://api.randomuser.me/";
-    const url = "http://localhost:8000/Gauss";
+    const url = "http://localhost:8000/Gauss_Jordan";
     // const url = "http://127.0.0.1/Json/item.json";
     const response = await fetch(url);
     console.log(response);
     const data = await response.json();
     console.log(data);
     this.setState({
-      Dimension: data.Gauss.Dimension,
+      Dimension: data.Gauss_Jordan.Dimension,
     });
     this.createMatrix(this.state.Dimension, this.state.Dimension);
 
     for (var i = 0; i < this.state.Dimension; i++) {
       for (var j = 0; j < this.state.Dimension; j++) {
         document.getElementById("a" + (i + 1) + "" + (j + 1)).value =
-          data.Gauss.A[i][j];
-        document.getElementById("b" + (i + 1)).value = data.Gauss.B[i][0];
+          data.Gauss_Jordan.A[i][j];
+        document.getElementById("b" + (i + 1)).value =
+          data.Gauss_Jordan.B[i][0];
       }
     }
   }

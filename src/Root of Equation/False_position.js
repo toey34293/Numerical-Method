@@ -42,9 +42,26 @@ export default class Test extends Component {
     super(props);
     this.bi = this.bi.bind(this);
     this.fn = this.fn.bind(this);
+    this.Ex = this.Ex.bind(this);
     this.state = { ans: [], Funtion: "", XL: null, XR: null };
     this.elt = {};
     this.calculator = {};
+  }
+
+  //API
+  async Ex() {
+    // const url = "https://api.randomuser.me/";
+    const url = "http://localhost:8000/False_position";
+    // const url = "http://127.0.0.1/Json/item.json";
+    const response = await fetch(url);
+    console.log(response);
+    const data = await response.json();
+    console.log(data);
+    this.setState({
+      Funtion: data.False_position.Funtion,
+      XL: data.False_position.XL,
+      XR: data.False_position.XR,
+    });
   }
 
   componentDidMount() {
@@ -252,6 +269,17 @@ export default class Test extends Component {
               <br></br>
               <Button onClick={this.bi} type="primary">
                 Submit
+              </Button>
+              <Button
+                style={{
+                  marginLeft: "73%",
+                  backgroundColor: "#76D7C4",
+                  borderColor: "#76D7C4",
+                }}
+                onClick={this.Ex}
+                type="primary"
+              >
+                Example
               </Button>
             </div>
             <br></br>

@@ -47,7 +47,7 @@ export default class Test extends Component {
     this.elt = {};
     this.calculator = {};
   }
-
+  //API
   async Ex() {
     // const url = "https://api.randomuser.me/";
     const url = "http://localhost:8000/Bisection";

@@ -33,9 +33,26 @@ export default class Test extends Component {
     super(props);
     this.bi = this.bi.bind(this);
     this.fn = this.fn.bind(this);
+    this.Ex = this.Ex.bind(this);
     this.state = { ans: [], Funtion: "", X0: null };
     this.elt = {};
     this.calculator = {};
+  }
+
+  //API
+  async Ex() {
+    // const url = "https://api.randomuser.me/";
+    const url = "http://localhost:8000/Onepoint";
+    // const url = "http://127.0.0.1/Json/item.json";
+    const response = await fetch(url);
+    console.log(response);
+    const data = await response.json();
+    console.log(data.Onepoint.X0);
+    this.setState({
+      Funtion: data.Onepoint.Funtion,
+      X0: data.Onepoint.X0,
+    });
+    console.log(this.state.X0);
   }
 
   componentDidMount() {
@@ -173,7 +190,7 @@ export default class Test extends Component {
                   this.setState({ X0: e.target.value });
                   this.forceUpdate();
                 }}
-                value={this.state.XL}
+                value={this.state.X0}
                 name="X0"
                 placeholder="X0"
               />
@@ -181,6 +198,17 @@ export default class Test extends Component {
               <br></br>
               <Button onClick={this.bi} type="primary">
                 Submit
+              </Button>
+              <Button
+                style={{
+                  marginLeft: "73%",
+                  backgroundColor: "#76D7C4",
+                  borderColor: "#76D7C4",
+                }}
+                onClick={this.Ex}
+                type="primary"
+              >
+                Example
               </Button>
             </div>
             <br></br>

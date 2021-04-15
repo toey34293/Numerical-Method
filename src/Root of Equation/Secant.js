@@ -147,10 +147,6 @@ export default class Test extends Component {
       }
     } while (Math.abs(epsilon) > 0.000001);
     this.createTable(data["y"], data["error"]);
-    this.setState({
-      showOutputCard: true,
-      showGraph: true,
-    });
   }
 
   createTable(y, error) {
@@ -176,6 +172,7 @@ export default class Test extends Component {
                 onChange={(e) => {
                   this.setState({ Funtion: e.target.value });
                   this.forceUpdate();
+                  // console.log(this.state.Funtion);
                 }}
                 value={this.state.Funtion}
                 name="Funtion"

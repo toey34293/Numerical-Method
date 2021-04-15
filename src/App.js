@@ -15,6 +15,14 @@ import Onepoint from "./Root of Equation/Onepoint";
 import Newton_raphson from "./Root of Equation/Newton_raphson";
 import Secant from "./Root of Equation/Secant";
 
+import Crammer from "./Linear Algebra/Crammer";
+import Gauss from "./Linear Algebra/Gauss";
+import Gauss_Jordan from "./Linear Algebra/Gauss_Jordan";
+import LU from "./Linear Algebra/LU";
+import Jacobi from "./Linear Algebra/Jacobi";
+import Gauss_seijei from "./Linear Algebra/Gauss_seijei";
+import Conjugate_Gradient from "./Linear Algebra/Conjugate_Gradient";
+
 import test from "./umm/tt";
 import item from "./umm/item.json";
 
@@ -66,11 +74,29 @@ function App() {
                 icon={<LaptopOutlined />}
                 title="Linear Algebra"
               >
-                <Menu.Item key="5">option5</Menu.Item>
-                <Menu.Item key="6">option6</Menu.Item>
-                <Menu.Item key="7">option7</Menu.Item>
-                <Menu.Item key="8">option8</Menu.Item>
+                <Menu.Item key="6">
+                  <Link to="/Crammer">Cramer's Rule</Link>
+                </Menu.Item>
+                <Menu.Item key="7">
+                  <Link to="/Gauss">Gauss Elimination</Link>
+                </Menu.Item>
+                <Menu.Item key="8">
+                  <Link to="/Gauss_Jordan">Gauss Jordan</Link>
+                </Menu.Item>
+                <Menu.Item key="9">
+                  <Link to="/LU">LU Decomposition</Link>
+                </Menu.Item>
+                <Menu.Item key="10">
+                  <Link to="/Jacobi">Jacobi Iteration</Link>
+                </Menu.Item>
+                <Menu.Item key="11">
+                  <Link to="/Gauss_seijei">Gauss Seidel</Link>
+                </Menu.Item>
+                <Menu.Item key="12">
+                  <Link to="/Gauss_Jordan">Conjugate Gradient</Link>
+                </Menu.Item>
               </SubMenu>
+
               <SubMenu
                 key="sub3"
                 icon={<NotificationOutlined />}
@@ -131,8 +157,20 @@ function App() {
                   component={Newton_raphson}
                 />
                 <Route exact path="/Secant" component={Secant} />
+
+                <Route exact path="/Crammer" component={Crammer} />
+                <Route exact path="/Gauss" component={Gauss} />
+                <Route exact path="/Gauss_Jordan" component={Gauss_Jordan} />
+                <Route exact path="/LU" component={LU} />
+                <Route exact path="/Jacobi" component={Jacobi} />
+                <Route exact path="/Gauss_seijei" component={Gauss_seijei} />
+                <Route
+                  exact
+                  path="/Conjugate_Gradient"
+                  component={Conjugate_Gradient}
+                />
+
                 <Route exact path="/test" component={test} />
-                <Route exact path="/item.json" component={item} />
               </Switch>
             </Content>
           </Layout>

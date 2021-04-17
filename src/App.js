@@ -23,6 +23,10 @@ import Jacobi from "./Linear Algebra/Jacobi";
 import Gauss_seijei from "./Linear Algebra/Gauss_seijei";
 import Conjugate_Gradient from "./Linear Algebra/Conjugate_Gradient";
 
+import Newton from "./Interpolation/Newton";
+import Lagrange from "./Interpolation/Lagrange";
+import Spline from "./Interpolation/Spline";
+
 import test from "./umm/tt";
 import item from "./umm/item.json";
 
@@ -102,10 +106,15 @@ function App() {
                 icon={<NotificationOutlined />}
                 title="Interpolation"
               >
-                <Menu.Item key="9">option9</Menu.Item>
-                <Menu.Item key="10">option10</Menu.Item>
-                <Menu.Item key="11">option11</Menu.Item>
-                <Menu.Item key="12">option12</Menu.Item>
+                <Menu.Item key="13">
+                  <Link to="/Newton">Newton Divided Difference</Link>
+                </Menu.Item>
+                <Menu.Item key="14">
+                  <Link to="/Lagrange">Lagrange</Link>
+                </Menu.Item>
+                <Menu.Item key="15">
+                  <Link to="/Spline">Spline</Link>
+                </Menu.Item>
               </SubMenu>
               <SubMenu
                 key="sub4"
@@ -158,6 +167,7 @@ function App() {
                 />
                 <Route exact path="/Secant" component={Secant} />
 
+                {/* Linear Algebra */}
                 <Route exact path="/Crammer" component={Crammer} />
                 <Route exact path="/Gauss" component={Gauss} />
                 <Route exact path="/Gauss_Jordan" component={Gauss_Jordan} />
@@ -169,6 +179,11 @@ function App() {
                   path="/Conjugate_Gradient"
                   component={Conjugate_Gradient}
                 />
+
+                {/* Interpolation */}
+                <Route exact path="/Newton" component={Newton} />
+                <Route exact path="/Lagrange" component={Lagrange} />
+                <Route exact path="/Spline" component={Spline} />
 
                 <Route exact path="/test" component={test} />
               </Switch>

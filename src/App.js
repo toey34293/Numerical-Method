@@ -93,7 +93,7 @@ function App() {
                   <Link to="/Gauss_seijei">Gauss Seidel</Link>
                 </Menu.Item>
                 <Menu.Item key="12">
-                  <Link to="/Gauss_Jordan">Conjugate Gradient</Link>
+                  <Link to="/Conjugate_Gradient">Conjugate Gradient</Link>
                 </Menu.Item>
               </SubMenu>
 

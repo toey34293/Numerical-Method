@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import "@testing-library/jest-dom";
+import Crammer from "./Linear Algebra/Crammer";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+it("test Crammer", () => {
+  render(<Crammer />);
+  expect(screen.getByText("Cramer's Rule")).toBeInTheDocument();
 });

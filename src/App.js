@@ -27,6 +27,10 @@ import Newton from "./Interpolation/Newton";
 import Lagrange from "./Interpolation/Lagrange";
 import Spline from "./Interpolation/Spline";
 
+import Linear from "./Regression/Linear";
+import Polynomial from "./Regression/Polynomial";
+import MultipleLinear from "./Regression/MultipleLinear";
+
 import test from "./umm/tt";
 import item from "./umm/item.json";
 
@@ -121,10 +125,15 @@ function App() {
                 icon={<NotificationOutlined />}
                 title="Least Squares Regression"
               >
-                <Menu.Item key="13">option13</Menu.Item>
-                <Menu.Item key="14">option14</Menu.Item>
-                <Menu.Item key="15">option15</Menu.Item>
-                <Menu.Item key="16">option16</Menu.Item>
+                <Menu.Item key="16">
+                  <Link to="/Linear">Linear</Link>
+                </Menu.Item>
+                <Menu.Item key="17">
+                  <Link to="/Polynomial">Polynomial</Link>
+                </Menu.Item>
+                <Menu.Item key="18">
+                  <Link to="/MultipleLinear">MultipleLinear</Link>
+                </Menu.Item>
               </SubMenu>
               <SubMenu
                 key="sub5"
@@ -184,6 +193,15 @@ function App() {
                 <Route exact path="/Newton" component={Newton} />
                 <Route exact path="/Lagrange" component={Lagrange} />
                 <Route exact path="/Spline" component={Spline} />
+
+                {/* Regression */}
+                <Route exact path="/Linear" component={Linear} />
+                <Route exact path="/Polynomial" component={Polynomial} />
+                <Route
+                  exact
+                  path="/MultipleLinear"
+                  component={MultipleLinear}
+                />
 
                 <Route exact path="/test" component={test} />
               </Switch>

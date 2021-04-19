@@ -3,7 +3,7 @@ import "antd/dist/antd.css";
 import { Card, Input, Button, Table } from "antd";
 import Desmos from "desmos";
 import { addStyles, EditableMathField } from "react-mathquill";
-const { regression } = require("multiregress");
+import regression from "regression";
 const AlgebraLatex = require("algebra-latex");
 const math = require("mathjs");
 

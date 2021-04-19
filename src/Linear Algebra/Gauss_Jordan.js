@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "antd/dist/antd.css";
 import { Card, Input, Button, Table } from "antd";
-import Desmos from "desmos";
 import { addStyles, EditableMathField } from "react-mathquill";
-const AlgebraLatex = require("algebra-latex");
 const math = require("mathjs");
 
 addStyles();
@@ -66,6 +64,8 @@ export default class Test extends Component {
   }
 
   initMatrix() {
+    A = [];
+    B = [];
     for (var i = 0; i < this.state.Dimension; i++) {
       A[i] = [];
       for (var j = 0; j < this.state.Dimension; j++) {
@@ -80,8 +80,8 @@ export default class Test extends Component {
 
   cal() {
     var n = this.state.Dimension;
-    console.log(A);
-    console.log(B);
+    console.log("A", A);
+    console.log("B", B);
     this.initMatrix();
     if (A[0][0] === 0) {
       //pivoting

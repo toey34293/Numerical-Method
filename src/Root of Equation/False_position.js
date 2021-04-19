@@ -158,6 +158,12 @@ export default class Test extends Component {
       console.log("Iteration No. = " + time);
       console.log("Root of equation is " + xmn.toFixed(6));
       ans.push(xmn.toFixed(6));
+      data["xl"][time] = xl;
+      data["xr"][time] = xr;
+      data["x"][time] = xmn.toFixed(6);
+      data["error"][time] = Math.abs(err).toFixed(6);
+      this.createTable(data["xl"], data["xr"], data["x"], data["error"]);
+      this.forceUpdate();
       return;
     }
     data["xl"][0] = xl;
@@ -165,7 +171,7 @@ export default class Test extends Component {
     data["x"][0] = xmn.toFixed(6);
     data["error"][0] = Math.abs(err).toFixed(6);
     while (true) {
-      if (time >= 1000) {
+      if (time + 1 > 1000) {
         break;
       }
       time++;

@@ -5,9 +5,11 @@ import "antd/dist/antd.css";
 import "./index.css";
 import { Layout, Menu, Breadcrumb } from "antd";
 import {
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
+  LineChartOutlined,
+  TableOutlined,
+  DotChartOutlined,
+  BarChartOutlined,
+  FunctionOutlined,
 } from "@ant-design/icons";
 import Bisection from "./Root of Equation/Bisection";
 import False_position from "./Root of Equation/False_position";
@@ -58,7 +60,7 @@ function App() {
             >
               <SubMenu
                 key="sub1"
-                icon={<UserOutlined />}
+                icon={<LineChartOutlined />}
                 title="Root of Equation"
               >
                 <Menu.Item key="1">
@@ -79,7 +81,7 @@ function App() {
               </SubMenu>
               <SubMenu
                 key="sub2"
-                icon={<LaptopOutlined />}
+                icon={<TableOutlined />}
                 title="Linear Algebra"
               >
                 <Menu.Item key="6">
@@ -107,7 +109,7 @@ function App() {
 
               <SubMenu
                 key="sub3"
-                icon={<NotificationOutlined />}
+                icon={<DotChartOutlined />}
                 title="Interpolation"
               >
                 <Menu.Item key="13">
@@ -122,7 +124,7 @@ function App() {
               </SubMenu>
               <SubMenu
                 key="sub4"
-                icon={<NotificationOutlined />}
+                icon={<BarChartOutlined />}
                 title="Least Squares Regression"
               >
                 <Menu.Item key="16">
@@ -135,7 +137,7 @@ function App() {
                   <Link to="/MultipleLinear">MultipleLinear</Link>
                 </Menu.Item>
               </SubMenu>
-              <SubMenu
+              {/* <SubMenu
                 key="sub5"
                 // icon={<NotificationOutlined />}
                 title="tets"
@@ -143,7 +145,7 @@ function App() {
                 <Menu.Item key="17">
                   <Link to="/test">test</Link>
                 </Menu.Item>
-              </SubMenu>
+              </SubMenu> */}
             </Menu>
           </Sider>
           <Layout style={{ padding: "0 24px 24px" }}>
@@ -151,6 +153,7 @@ function App() {
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item>List</Breadcrumb.Item>
               <Breadcrumb.Item>App</Breadcrumb.Item>
+              <Breadcrumb.Item>Toey Wiphuphon Reinsriwong</Breadcrumb.Item>
             </Breadcrumb>
             <Content
               className="site-layout-background"

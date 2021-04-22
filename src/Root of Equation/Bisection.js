@@ -9,6 +9,7 @@ const math = require("mathjs");
 addStyles();
 
 var dataInTable = [];
+var ansp = null;
 const columns = [
   {
     title: "Iteration",
@@ -103,7 +104,10 @@ export default class Test extends Component {
       lineStyle: Desmos.Styles.DASHED,
       color: this.calculator.colors.ORANGE,
     });
-    this.calculator.setExpression({ id: "graph1", latex: this.state.Funtion });
+    this.calculator.setExpression({
+      id: "graph1",
+      latex: this.state.Funtion,
+    });
     this.calculator.setExpression({
       id: "line1",
       latex: "x=" + this.state.XL,
@@ -113,6 +117,14 @@ export default class Test extends Component {
       id: "line2",
       latex: "x=" + this.state.XR,
       lineStyle: Desmos.Styles.DASHED,
+    });
+    this.calculator.setExpression({
+      label: "(" + ansp + ",0)",
+      id: "ANS",
+      latex: "(" + ansp + ",0)",
+      lineStyle: Desmos.Styles.DASHED,
+      showLabel: true,
+      // color: this.calculator.colors.RED,
     });
     console.log(this.calculator);
     document.getElementsByClassName(
@@ -159,6 +171,7 @@ export default class Test extends Component {
       data["xl"][time] = xl;
       data["xr"][time] = xr;
       data["x"][time] = xmn.toFixed(6);
+      ansp = xmn.toFixed(6);
       data["error"][time] = Math.abs(err).toFixed(6);
       this.createTable(data["xl"], data["xr"], data["x"], data["error"]);
       this.forceUpdate();
@@ -167,6 +180,7 @@ export default class Test extends Component {
     data["xl"][0] = xl;
     data["xr"][0] = xr;
     data["x"][0] = xmn.toFixed(6);
+    ansp = xmn.toFixed(6);
     data["error"][0] = Math.abs(err).toFixed(6);
     while (true) {
       if (time >= 1000) {
@@ -191,6 +205,7 @@ export default class Test extends Component {
       data["xl"][time] = xl;
       data["xr"][time] = xr;
       data["x"][time] = xmn.toFixed(6);
+      ansp = xmn.toFixed(6);
       data["error"][time] = Math.abs(err).toFixed(6);
 
       console.log("Iteration No. = " + time);
@@ -204,6 +219,7 @@ export default class Test extends Component {
     data["xl"][time] = xl;
     data["xr"][time] = xr;
     data["x"][time] = xmn.toFixed(6);
+    ansp = xmn.toFixed(6);
     data["error"][time] = Math.abs(err).toFixed(6);
 
     this.createTable(data["xl"], data["xr"], data["x"], data["error"]);

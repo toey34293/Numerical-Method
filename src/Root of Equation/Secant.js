@@ -10,6 +10,7 @@ const math = require("mathjs");
 addStyles();
 
 var dataInTable = [];
+var ansp = null;
 const columns = [
   {
     title: "Iteration",
@@ -86,7 +87,14 @@ export default class Test extends Component {
     //   latex: "x=" + this.state.X0,
     //   lineStyle: Desmos.Styles.DASHED,
     // });
-
+    this.calculator.setExpression({
+      label: "(" + ansp + ",0)",
+      id: "ANS",
+      latex: "(" + ansp + ",0)",
+      lineStyle: Desmos.Styles.DASHED,
+      showLabel: true,
+      color: this.calculator.colors.BLACK,
+    });
     console.log(this.calculator);
     document.getElementsByClassName(
       "dcg-graphpaper-branding"
@@ -139,6 +147,7 @@ export default class Test extends Component {
       x.push(y);
       epsilon = error(y, x[i]);
       data["y"][n] = y.toFixed(8);
+      ansp = y.toFixed(6);
       data["error"][n] = Math.abs(epsilon).toFixed(8);
       n++;
       i++;

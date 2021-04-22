@@ -54,6 +54,7 @@ function App() {
           <Sider width={200} className="site-layout-background">
             <Menu
               mode="inline"
+              //Set index page
               // defaultSelectedKeys={["1"]}
               // defaultOpenKeys={["sub1"]}
               style={{ height: "100%", borderRight: 0 }}
@@ -137,15 +138,6 @@ function App() {
                   <Link to="/MultipleLinear">MultipleLinear</Link>
                 </Menu.Item>
               </SubMenu>
-              {/* <SubMenu
-                key="sub5"
-                // icon={<NotificationOutlined />}
-                title="tets"
-              >
-                <Menu.Item key="17">
-                  <Link to="/test">test</Link>
-                </Menu.Item>
-              </SubMenu> */}
             </Menu>
           </Sider>
           <Layout style={{ padding: "0 24px 24px" }}>

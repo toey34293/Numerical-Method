@@ -42,7 +42,7 @@ export default class Test extends Component {
   //API
   async Ex() {
     // const url = "https://api.randomuser.me/";
-    const url = "http://localhost:8000/Secant";
+    const url = "http://192.168.102.128:8000/Secant";
     // const url = "http://127.0.0.1/Json/item.json";
     const response = await fetch(url);
     console.log(response);
@@ -147,6 +147,7 @@ export default class Test extends Component {
       }
     } while (Math.abs(epsilon) > 0.000001);
     this.createTable(data["y"], data["error"]);
+    this.forceUpdate();
   }
 
   createTable(y, error) {

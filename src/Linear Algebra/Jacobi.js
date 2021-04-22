@@ -41,7 +41,7 @@ export default class Test extends Component {
   //API
   async Ex() {
     // const url = "https://api.randomuser.me/";
-    const url = "http://localhost:8000/Jacobi";
+    const url = "http://192.168.102.128:8000/Jacobi";
     // const url = "http://127.0.0.1/Json/item.json";
     const response = await fetch(url);
     console.log(response);

@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.0",
-    "algebra-latex": "^2.0.3",
+    "algebra-latex": "^2.0.3", 
     "antd": "^4.15.0",
     "bootstrap": "^4.6.0",
     "cubic-spline": "^3.0.3",

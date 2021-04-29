@@ -145,7 +145,19 @@ function App() {
               <Breadcrumb.Item>Home</Breadcrumb.Item>
               <Breadcrumb.Item>List</Breadcrumb.Item>
               <Breadcrumb.Item>App</Breadcrumb.Item>
-              <Breadcrumb.Item>Toey Wiphuphon Reinsriwong</Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a className="App-link" href="http://cs.kmutnb.ac.th/">
+                  CS
+                </a>
+              </Breadcrumb.Item>
+              <Breadcrumb.Item>
+                <a
+                  className="App-link"
+                  href="https://www.facebook.com/profile.php?id=100008824681944"
+                >
+                  Toey Wiphuphon Reinsriwong
+                </a>
+              </Breadcrumb.Item>
             </Breadcrumb>
             <Content
               className="site-layout-background"

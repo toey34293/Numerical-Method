@@ -1,0 +1,31 @@
+.graph,
+#chartdiv {
+  height: 500px;
+  width: 100%;
+  border: none;
+  padding: 5px;
+}
+
+.Draw {
+  border: 2px black solid;
+}
+
+.amcharts-AmChartsLogo-group {
+  visibility: hidden;
+}
+
+.amcharts-Sprite-group.amcharts-Container-group {
+  stroke: black;
+  stroke-width: 1px;
+}
+
+rect {
+  fill: whitesmoke;
+  fill-opacity: 1;
+  height: 100;
+  margin: 10px;
+}
+
+.XX {
+  padding: 10px;
+}

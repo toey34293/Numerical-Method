@@ -240,7 +240,7 @@ export default class Test extends Component {
       });
     }
   }
-
+  // 10\cdot\left(\frac{\log\left(x\right)}{\log\left(e\right)}\right)-x
   render() {
     return (
       <div>

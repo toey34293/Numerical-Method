@@ -251,7 +251,7 @@ export default class Test extends Component {
               <p>Funtion</p>
               <Input
                 onChange={(e) => {
-                  this.setState({ Funtion: e.target.value });
+                  this.setState({ Funtion: e.target.value }); // Funtion = value in input
                   this.forceUpdate();
                 }}
                 value={this.state.Funtion}

@@ -62,8 +62,6 @@ export default class Test extends Component {
       showTableInput: false,
       showTableInpu2: false,
     };
-    this.elt = {};
-    this.calculator = {};
     this.plot = [];
   }
   //API
@@ -98,6 +96,7 @@ export default class Test extends Component {
   }
 
   componentDidMount() {
+    //ทำอัตโนมัติหลังจาก render เสร็จ
     const data = this.state.rows;
     console.log("data", data);
     const chartConfiguration = {
@@ -135,6 +134,7 @@ export default class Test extends Component {
   }
 
   componentDidUpdate() {
+    //ทำอัตโนมัติหลังจาก re-render เสร็จ
     const data = this.state.rows;
     console.log("data", data);
     const chartConfiguration = {
@@ -172,6 +172,7 @@ export default class Test extends Component {
   }
 
   componentWillUnmount() {
+    //ทำอัตโนมัติหลังจากสลาย แล้วไปทำ componentDidUpdate
     if (this.chart) {
       this.chart.dispose();
     }
@@ -180,6 +181,7 @@ export default class Test extends Component {
   }
 
   initialSchema(n) {
+    columns2 = [];
     for (var i = 0; i < n; i++) {
       columns2.push({
         title: "L" + i,
@@ -197,6 +199,7 @@ export default class Test extends Component {
   initialValue() {
     x = [];
     y = [];
+    interpolatePoint = [];
     for (var i = 1; i <= this.state.nPoints; i++) {
       x[i] = parseFloat(document.getElementById("x" + i).value);
       y[i] = parseFloat(document.getElementById("y" + i).value);
@@ -206,7 +209,7 @@ export default class Test extends Component {
     }
     //loop set ค่า plot
     for (var i = 0; i < x.length - 1; i++) {
-      this.plot[i] = { x: x[i + 1], y: y[i + 1] };
+      this.plot[i] = { x: x[i + 1], y: y[i + 1] }; //plot[0]={x:0,y=9.81}
     }
     this.setState({ rows: this.plot });
     console.log("initialValue");
@@ -217,8 +220,8 @@ export default class Test extends Component {
       denominate = 1; /*ตัวส่วน*/
     for (var i = 1; i <= n; i++) {
       if (i !== index) {
-        numerate *= x[i] - X;
-        denominate *= x[i] - x[index];
+        numerate *= X - x[i];
+        denominate *= x[index] - x[i];
       }
     }
     console.log(numerate / denominate);
@@ -228,14 +231,12 @@ export default class Test extends Component {
   lagrange(n, X) {
     fx = 0;
     this.initialValue();
-    tag = "";
     tag = "{";
     console.log("lagrange1");
     for (var i = 1; i <= n; i++) {
       var ln = this.L(X, i, n);
 
-      tag += '"l' + (i - 1) + '": ' + ln;
-      tag += ",";
+      tag += '"l' + (i - 1) + '": ' + ln + ",";
 
       fx += ln * y[i];
     }
@@ -247,6 +248,7 @@ export default class Test extends Component {
   }
 
   bi() {
+    dataInTable = [];
     this.initialSchema(this.state.interpolatePoint);
     this.lagrange(
       parseInt(this.state.interpolatePoint),
@@ -258,7 +260,7 @@ export default class Test extends Component {
     dataInTable.push(JSON.parse(tag));
     console.log("lagrange2");
     console.log(dataInTable);
-    console.log(fx);
+
     console.log("end");
     this.forceUpdate();
   }
@@ -370,7 +372,7 @@ export default class Test extends Component {
               <p>X</p>
               <Input
                 onChange={(e) => {
-                  this.setState({ X: e.target.value });
+                  this.setState({ X: e.target.value }); //x=42000;
                   this.forceUpdate();
                 }}
                 value={this.state.X}
